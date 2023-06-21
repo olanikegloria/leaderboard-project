@@ -1,0 +1,27 @@
+.container {
+    padding: 2rem;
+}
+
+.leaderboard-content {
+    display: flex;
+    gap: 15rem;
+    padding: 2rem;
+}
+
+.score-container {
+    border: 2px solid black;
+    padding: 2rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+.score-container p {
+    text-align: start;
+}
+
+.input-style {
+    padding-bottom: 1.2rem;
+    width: 2rem;
+}
