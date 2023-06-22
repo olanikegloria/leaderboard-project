@@ -56,6 +56,8 @@ const addScore = async (e) => {
         });
       const data = await response.json();
       console.log(data);
+      document.querySelector('.name').value = '';
+      document.querySelector('.score').value = '';
     }
   } catch (error) {
     console.log('an error occured');
@@ -68,11 +70,16 @@ const loadNewGame = async () => {
     const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${getSavedId()}/scores/`);
     const data = await response.json();
     console.log(data);
+    let items = '';
     data.result.forEach((item) => {
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `<p>${item.user}: ${item.score}</p>`;
-      listContainer.appendChild(listItem);
+      items += `<p>${item.user}: ${item.score}</p>`;
     });
+    listContainer.innerHTML = items;
+    // data.result.forEach((item) => {
+    //   const listItem = document.createElement('li');
+    //   listItem.innerHTML = `<p>${item.user}: ${item.score}</p>`;
+    //   listContainer.appendChild(listItem);
+    // });
   } catch (error) {
     console.log('an error occured');
   }
