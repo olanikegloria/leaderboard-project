@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(101.8deg, rgb(28, 28, 224) -0.2%, rgb(153, 68, 230) 55.2%, rgb(235, 18, 180) 84.4%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+h2 {
+  color: white;
+}
+
+.recent-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.8rem;
+}
+
+.add-score {
+  background-color: black;
+  padding: 2.5rem;
+  margin: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 450px;
+  border-radius: 50px;
+}
+
+.add-score h2 {
+  padding-bottom: 1.5rem;
+}
+
+.recent {
+  background-color: black;
+  color: white;
+  padding: 60px;
+  border-radius: 50px;
+}
+
+.list-container {
+  height: 270px;
+  overflow-y: auto;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 12px;
+  scroll-behavior: smooth;
+}
+
+.list-container::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+  margin: 0 20px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: #3266cc;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 10px;
+  font-size: 1.2rem;
+}
+
+.list-item span {
+  background: linear-gradient(101.8deg, rgb(28, 28, 224) -0.2%, rgb(153, 68, 230) 55.2%, rgb(235, 18, 180) 84.4%);
+  padding: 15px;
+  border-radius: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background: linear-gradient(101.8deg, rgb(28, 28, 224) -0.2%, rgb(153, 68, 230) 55.2%, rgb(235, 18, 180) 84.4%);
+  border: 0;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 20px -15px rgba(127, 0, 255, 0.8);
+}
+
+.refresh-heading {
+  padding-right: 5rem;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 0.8rem 5rem;
+  background-color: black;
+  border: 0;
+  border-bottom: 5px solid gray;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.msg {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.add-btn {
+  margin-top: 1.2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.bg-black {
+  background-color: black;
+  padding: -2px;
+}
