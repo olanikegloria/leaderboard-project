@@ -13,28 +13,14 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>leaderboard</h1>
-        <div class="leaderboard-content">
-            <div class="recent-scores">
-                <h2>Recent Scores</h2>
-                <button class="refresh-btn">Refresh</button>
-                <ul class="score-container">
-                    <p>display scores</p>
-                </ul>
-            </div>
-            <form>
-                <h2>Add Your scores</h2>
-                <div class="input-style">
-                   <input placeholder="enter name" class="name">
-                </div>
-                <div class="input-style">
-                    <input placeholder="enter score" class="score">
-                </div>
-                <button class="add-new"> Add New</button>
-            </form>
-        </div>
-    </div>
+    <form id="form">
+        <p class="msg"></p>
+        <input type="text" placeholder="name" class="name"><br>
+        <input type="number" placeholder="score" class="score"><br>
+        <button class="add-btn">submit</button>
+    </form>
+    <button class="refresh">Refresh</button>
+    <ul class="list-container"></ul>
 </body>
 
 </html>
