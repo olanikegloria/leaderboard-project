@@ -1,3 +1,5 @@
+import './style.css';
+
 const saveId = (gameId) => {
   localStorage.setItem('gameId', gameId);
 };
@@ -7,6 +9,7 @@ const getSavedId = () => {
   return currentGame;
 };
 
+const msg = document.querySelector('.msg');
 const listContainer = document.querySelector('.list-container');
 const refresh = document.querySelector('.refresh');
 const createGame = async () => {
@@ -33,14 +36,15 @@ const addScore = async (e) => {
   e.preventDefault();
   const user = document.querySelector('.name').value;
   const score = document.querySelector('.score').value;
-  const msg = document.querySelector('.msg');
   const addBtn = document.querySelector('.add-btn');
   addBtn.disabled = true;
   try {
     if (user === '' && score === '') {
+      msg.classList.remove('hide');
       msg.textContent = 'enter a valid value';
       setTimeout(() => {
         msg.textContent = '';
+        msg.classList.add('bg-black');
       }, 2000);
     } else {
       const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${getSavedId()}/scores/`,
@@ -71,15 +75,10 @@ const loadNewGame = async () => {
     const data = await response.json();
     console.log(data);
     let items = '';
-    data.result.forEach((item) => {
-      items += `<p>${item.user}: ${item.score}</p>`;
+    data.result.forEach((item, index) => {
+      items += `<p class= "list-pg"> <span class="index">${index + 1}</span> ${item.user}: <span class="score-item">${item.score}</span> </p>`;
     });
     listContainer.innerHTML = items;
-    // data.result.forEach((item) => {
-    //   const listItem = document.createElement('li');
-    //   listItem.innerHTML = `<p>${item.user}: ${item.score}</p>`;
-    //   listContainer.appendChild(listItem);
-    // });
   } catch (error) {
     console.log('an error occured');
   }
