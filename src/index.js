@@ -76,7 +76,7 @@ const loadNewGame = async () => {
     console.log(data);
     let items = '';
     data.result.forEach((item, index) => {
-      items += `<p class= "list-pg"> <span class="index">${index + 1}</span> ${item.user}: <span class="score-item">${item.score}</span> </p>`;
+      items += `<li class="list-item"> <span class="index">${index + 1}</span> ${item.user}: <span class="score-item">${item.score}</span> </li>`;
     });
     listContainer.innerHTML = items;
   } catch (error) {
@@ -86,6 +86,7 @@ const loadNewGame = async () => {
 if (!getSavedId()) {
   createGame();
 }
+loadNewGame();
 const form = document.querySelector('#form');
 form.addEventListener('submit', addScore);
 refresh.addEventListener('click', loadNewGame);
