@@ -1,5 +1,3 @@
-import './style.css';
-
 const saveId = (gameId) => {
   localStorage.setItem('gameId', gameId);
 };
